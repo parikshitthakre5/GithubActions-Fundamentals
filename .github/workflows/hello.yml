@@ -1,0 +1,18 @@
+name: Hello-Workflow  # Nanme of an workflow 
+
+#Runs on Trigger 
+on :
+    push: 
+        branches: [main]
+
+jobs:        #This are jobs inside the Workflow 
+
+    greet:   #This is the name of the job 
+    
+        runs-on : ubuntu-latest    #This is an github Runner 
+        steps:   #This all-wasys contains list 
+            - name: Say hello to Users 
+              run: echo Hello Dosto 
+
+            - name: Say hello to Username
+              run: echo Hello $USER 
