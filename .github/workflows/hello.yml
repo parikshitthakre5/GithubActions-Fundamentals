@@ -16,3 +16,9 @@ jobs:        #This are jobs inside the Workflow
 
             - name: Say hello to Username
               run: echo Hello $USER 
+    details:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Show what is the version of Docker , Python etc 
+              run: docker --version && python --version
+           
