@@ -1,1 +1,534 @@
-<h1>Hello Dosto</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DevOps Engineer Portfolio</title>
+
+<style>
+
+/* CSS VARIABLES */
+
+:root{
+--primary:#2563eb;
+--secondary:#1e293b;
+--accent:#38bdf8;
+--bg:#f8fafc;
+--text:#0f172a;
+--card:#ffffff;
+}
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
+
+/* NAVBAR */
+
+nav{
+position:sticky;
+top:0;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+z-index:1000;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:600;
+}
+
+nav a:hover{
+color:var(--primary);
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:linear-gradient(135deg,#2563eb,#38bdf8);
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-bottom:25px;
+}
+
+.hero button{
+padding:12px 25px;
+border:none;
+margin:10px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn-primary{
+background:white;
+color:#2563eb;
+}
+
+.btn-primary:hover{
+transform:scale(1.05);
+}
+
+.btn-secondary{
+background:transparent;
+border:2px solid white;
+color:white;
+}
+
+.btn-secondary:hover{
+background:white;
+color:#2563eb;
+}
+
+/* SECTION */
+
+section{
+padding:80px 10%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+font-size:2rem;
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* SKILLS */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.skill-card{
+background:var(--card);
+padding:25px;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+.skill-card h3{
+margin-bottom:15px;
+}
+
+.skill{
+margin-bottom:10px;
+}
+
+.bar{
+height:6px;
+background:#e2e8f0;
+border-radius:10px;
+}
+
+.bar span{
+display:block;
+height:6px;
+background:var(--primary);
+border-radius:10px;
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.project-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-6px);
+}
+
+.project-card h3{
+margin-bottom:10px;
+}
+
+.project-links{
+margin-top:15px;
+}
+
+.project-links a{
+text-decoration:none;
+margin-right:15px;
+color:var(--primary);
+font-weight:600;
+}
+
+/* TIMELINE */
+
+.timeline{
+border-left:3px solid var(--primary);
+padding-left:25px;
+}
+
+.timeline-item{
+margin-bottom:30px;
+}
+
+.timeline-item h4{
+color:var(--primary);
+}
+
+/* CERTIFICATIONS */
+
+.cert-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.cert-card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+text-align:center;
+}
+
+/* CONTACT */
+
+.contact form{
+display:flex;
+flex-direction:column;
+gap:15px;
+max-width:500px;
+margin:auto;
+}
+
+input, textarea{
+padding:12px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+.contact button{
+background:var(--primary);
+color:white;
+border:none;
+padding:12px;
+cursor:pointer;
+border-radius:6px;
+}
+
+/* FOOTER */
+
+footer{
+background:var(--secondary);
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.2rem;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<h2>DevOps</h2>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h1>John Doe</h1>
+
+<p>DevOps Engineer | Cloud | Automation | CI/CD</p>
+
+<button class="btn-primary">View Projects</button>
+<button class="btn-secondary">Contact Me</button>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about">
+
+<div>
+
+<p>
+
+I am a DevOps Engineer passionate about building scalable infrastructure, automating deployment pipelines, and optimizing cloud environments.
+
+My expertise includes CI/CD pipelines, containerization, cloud infrastructure, and monitoring systems.
+
+</p>
+
+</div>
+
+<img src="https://via.placeholder.com/400">
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+
+<h3>Frontend</h3>
+
+<div class="skill">HTML<div class="bar"><span style="width:90%"></span></div></div>
+<div class="skill">CSS<div class="bar"><span style="width:85%"></span></div></div>
+<div class="skill">JavaScript<div class="bar"><span style="width:70%"></span></div></div>
+
+</div>
+
+<div class="skill-card">
+
+<h3>DevOps</h3>
+
+<div class="skill">Docker<div class="bar"><span style="width:90%"></span></div></div>
+<div class="skill">Kubernetes<div class="bar"><span style="width:80%"></span></div></div>
+<div class="skill">CI/CD<div class="bar"><span style="width:85%"></span></div></div>
+
+</div>
+
+<div class="skill-card">
+
+<h3>Cloud</h3>
+
+<div class="skill">AWS<div class="bar"><span style="width:90%"></span></div></div>
+<div class="skill">Terraform<div class="bar"><span style="width:75%"></span></div></div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+
+<div class="project-card">
+
+<h3>CI/CD Pipeline</h3>
+
+<p>Automated pipeline using GitHub Actions.</p>
+
+<div class="project-links">
+<a href="#">GitHub</a>
+<a href="#">Live</a>
+</div>
+
+</div>
+
+<div class="project-card">
+
+<h3>Dockerized App</h3>
+
+<p>Containerized microservice architecture.</p>
+
+<div class="project-links">
+<a href="#">GitHub</a>
+<a href="#">Live</a>
+</div>
+
+</div>
+
+<div class="project-card">
+
+<h3>Kubernetes Deployment</h3>
+
+<p>Production ready deployment on Kubernetes.</p>
+
+<div class="project-links">
+<a href="#">GitHub</a>
+<a href="#">Live</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h4>DevOps Intern</h4>
+<p>ABC Tech • 2024</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h4>Cloud Engineer</h4>
+<p>XYZ Company • 2025</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CERTIFICATIONS -->
+
+<section>
+
+<h2 class="section-title">Certifications</h2>
+
+<div class="cert-grid">
+
+<div class="cert-card">AWS Cloud Practitioner</div>
+<div class="cert-card">AWS Solutions Architect</div>
+<div class="cert-card">Docker Certified Associate</div>
+<div class="cert-card">Kubernetes Certification</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<form>
+
+<input type="text" placeholder="Name">
+
+<input type="email" placeholder="Email">
+
+<textarea rows="5" placeholder="Message"></textarea>
+
+<button>Send Message</button>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 DevOps Engineer Portfolio</p>
+
+</footer>
+
+</body>
+</html>
