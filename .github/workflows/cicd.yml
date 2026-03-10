@@ -1,6 +1,17 @@
 name: cicd
 on:
   workflow_dispatch: null
+      inputs:
+          environments:
+              description: This the environment that is Bydefault dev 
+              default: 'dev' 
+              required: true 
+              type: choice 
+              options: 
+                  - dev
+                  - staging 
+                  - prod
+  
 jobs:
   code:
     runs-on: ubuntu-latest
