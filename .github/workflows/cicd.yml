@@ -1,6 +1,6 @@
 name: cicd
 on:
-  workflow_dispatch: null
+  workflow_dispatch: 
       inputs:
           environments:
               description: This the environment that is Bydefault dev 
